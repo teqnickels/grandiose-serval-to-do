@@ -23,12 +23,13 @@ The App: As a user...
 - [ ] I can check items off as completed.
 - [ ] I can rearrange to do list items. 
 - [ ] I can edit the text on existing to do's.
-#### Additional Specs:
 - [ ] Create the back end using node and express.
 - [ ] Deploy the app to heroku. 
 - [ ] Create a database of to do list items.
 - [ ] Follow good Git team behaviors (do all your work on branches & submit pull requests for review before merging to master)
 - [x] The artifact produced is properly licensed, preferably with the [MIT license](https://opensource.org/licenses/MIT).
+
+
 #### Stretch Goals/Nice to Have's:
 - [ ] JS Lint finds no mistakes
 - [ ] I can create mulitple lists of to do's.
