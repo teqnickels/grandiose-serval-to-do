@@ -8,8 +8,13 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-
-
+    <form action="/create-project" method="post">
+      <input name="project" placeholder='Enter Project Name' id='user_submission' />
+      <button>Submit</button>
+    </form>
+    <div class='project_lists'>
+    </div>
+    <button class='delete_project'>X</button>
 
 
 
