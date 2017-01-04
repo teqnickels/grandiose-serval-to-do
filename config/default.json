@@ -1,3 +1,0 @@
-{
-  "postgres": "postgres://${process.env.USER}@localhost:5432/user-chai"
-}
