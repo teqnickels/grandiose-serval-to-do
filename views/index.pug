@@ -1,0 +1,10 @@
+extends layout
+block content
+
+    h1
+    p Welcome to
+    form(action='/create-project', method='post')
+      input#user_submission(name='project', placeholder='Enter Project Name')
+      button Submit
+    .project_lists
+    button.delete_project X
