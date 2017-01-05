@@ -11,3 +11,7 @@ block content
     ul
       for house in houses
         li= house.project_name
+          form(action='/delete/' + house.id, method='post')
+            button X
+          form
+            button edit

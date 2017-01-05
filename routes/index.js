@@ -15,7 +15,15 @@ router.get('/', function(req, res, next) {
 })
 
 router.post('/create-project', (req, res) => {
-  Projects.create(req.body.project).then(value => res.json(value))
+  Projects.create(req.body.project).then(value => res.redirect('/'))
+})
+
+router.post('/delete/:id', (req, res) => {
+  console.log('req.body', req.params.id)
+  Projects.deleteItem(req.params.id).then( () =>
+    res.redirect('/')
+  )
+  .catch(error => res.json(error))
 })
 
 
