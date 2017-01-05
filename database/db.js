@@ -13,7 +13,7 @@ const Projects = {
     return db.oneOrNone( createProjects, [projectName] )
   },
   getAll: () => {
-    return db.many(allProjects)
+    return db.any(allProjects)
   }
 }
 

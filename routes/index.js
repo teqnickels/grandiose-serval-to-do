@@ -5,12 +5,12 @@ const Projects = require('../database/db.js')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  Projects.getAll().then(house => {
-    console.log('asldfkj', house)
+  Projects.getAll().then(houses => {
+    // console.log('housesss', house)
     res.render('index', {
       title: 'Serval',
-      house: house
-    })
+      houses: houses
+    }).catch(error => next(error))
   })
 })
 
