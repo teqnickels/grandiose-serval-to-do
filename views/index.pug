@@ -13,5 +13,6 @@ block content
         li= house.project_name
           form(action='/delete/' + house.id, method='post')
             button X
-          form
+          form(action='/updateName/' + house.id method='post')
+            input#updatedProject(name='editedName', placeholder=house.project_name)
             button edit
