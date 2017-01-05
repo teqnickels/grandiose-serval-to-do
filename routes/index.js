@@ -26,5 +26,12 @@ router.post('/delete/:id', (req, res) => {
   .catch(error => res.json(error))
 })
 
+router.post('/updateName/:id', (req, res) => {
+  Projects.update(req.body.editedName, req.params.id).then( () =>
+    res.redirect('/')
+  )
+  .catch(error => res.json(error))
+})
+
 
 module.exports = router;

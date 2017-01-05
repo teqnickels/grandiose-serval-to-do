@@ -6,8 +6,9 @@ const db = pgp(`postgres://${process.env.USER}@localhost:5432/grandiose`)
 const createProjects =  'INSERT INTO projects (project_name) VALUES ($1) RETURNING *'
 
 const allProjects = 'SELECT * FROM projects'
-const updateName = 'UPDATE projects SET project_name=$1 WHERE'
+const updateName = 'UPDATE projects SET project_name=$1 WHERE id=$2 RETURNING *'
 const deleteItemSQL = 'DELETE from projects WHERE id = $1'
+
 
 const Projects = {
   create: (projectName) => {
@@ -18,6 +19,10 @@ const Projects = {
   },
   deleteItem: (id) => {
     return db.none( deleteItemSQL, [id] )
+  },
+  update: (projectName, id) => {
+    return db.one(updateName, [projectName, id] )
+      .then( result => result[0] )
   }
 }
 
