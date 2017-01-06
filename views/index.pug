@@ -16,3 +16,6 @@ block content
           form(action='/updateName/' + house.id method='post')
             input#updatedProject(name='editedName', placeholder=house.project_name)
             button edit
+          form(action='/completed/' + house.id method='post')
+              input#completed(name='completed' type="checkbox" checked=house.completed)
+              button update
