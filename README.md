@@ -21,7 +21,7 @@ The App: As a user...
 - [x] I can create to do list items.
 - [x] I can delete unwanted to do list items.
 - [X] I can check items off as completed.
-- [ ] I can rearrange to do list items. 
+- [x] I can rearrange to do list items. 
 - [x] I can edit the text on existing to do's.
 - [x] Create the back end using node and express.
 - [ ] Deploy the app to heroku. 
