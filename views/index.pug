@@ -9,7 +9,7 @@ block content
   .project_lists
 
     ul
-      for house in houses
+      each house, index in houses
         li= house.project_name
           form(action='/delete/' + house.id, method='post')
             button X
@@ -19,3 +19,10 @@ block content
           form(action='/completed/' + house.id method='post')
               input#completed(name='completed' type="checkbox" checked=house.completed)
               button update
+          if index !== 0
+            form(action=`/up/${house.id}` method='post')
+                input#up(name='up', type='button')
+                button UP
+          form(action=`/down/${house.id}` method='post')
+              //- input#down`(name='' type='' checked=house.)
+              button Down
