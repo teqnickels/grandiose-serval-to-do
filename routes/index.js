@@ -33,5 +33,11 @@ router.post('/updateName/:id', (req, res) => {
   .catch(error => res.json(error))
 })
 
+router.post('/completed/:id', (req, res) => {
+  Projects.completedYes(req.body).then( () =>
+    res.redirect('/')
+  )
+})
+
 
 module.exports = router;

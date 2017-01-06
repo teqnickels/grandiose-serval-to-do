@@ -1,6 +1,12 @@
 extends layout
 block content
 
+  script.
+    function onCheckClick() {
+      var checkBox = document.getElementById('checkbox')
+      console.log('checked?', checkBox.checked)
+    }
+
   h1
   p Welcome to
   form(action='/create-project', method='post')
@@ -11,6 +17,7 @@ block content
     ul
       for house in houses
         li= house.project_name
+          input(id="checkbox" type="checkbox" onclick="onCheckClick()")
           form(action='/delete/' + house.id, method='post')
             button X
           form(action='/updateName/' + house.id method='post')

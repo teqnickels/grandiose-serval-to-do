@@ -9,6 +9,9 @@ const allProjects = 'SELECT * FROM projects'
 const updateName = 'UPDATE projects SET project_name=$1 WHERE id=$2 RETURNING *'
 const deleteItemSQL = 'DELETE from projects WHERE id = $1'
 
+const completedYes ='UPDATE projects SET completed = true WHERE id=$1'
+const completedNo ='UPDATE projects SET completed = false WHERE id=$1'
+
 
 const Projects = {
   create: (projectName) => {
@@ -23,6 +26,9 @@ const Projects = {
   update: (projectName, id) => {
     return db.one(updateName, [projectName, id] )
       .then( result => result[0] )
+  },
+  completedYes: (id) => {
+    return db.one(completedYes, [id] )
   }
 }
 
