@@ -3,6 +3,8 @@ var router = express.Router();
 const Projects = require('../database/db.js')
 // console.log('This is Create', Projects.create(288, 'TESTEST'))
 
+let currentRank = 1
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   Projects.getAll().then(houses => {
@@ -13,6 +15,8 @@ router.get('/', function(req, res, next) {
     }).catch(error => next(error))
   })
 })
+
+
 
 router.post('/create-project', (req, res) => {
   Projects.create(req.body.project).then(value => res.redirect('/'))
@@ -34,9 +38,16 @@ router.post('/updateName/:id', (req, res) => {
 })
 
 router.post('/completed/:id', (req, res) => {
-  Projects.completedYes(req.body).then( () =>
+
+  const isCompleted = req.body.completed === "on" ? true : false
+
+  Projects.completedYes(req.params.id, isCompleted).then(() => {
     res.redirect('/')
-  )
+  })
+
+  // Projects.completedYes(req.body.completed).then( () =>
+  //   res.redirect('/')
+  // )
 })
 
 
