@@ -3,7 +3,7 @@ const pgp = pgPromise()
 const db = pgp(`postgres://${process.env.USER}@localhost:5432/grandiose`)
 
 
-const createProjects =  'INSERT INTO projects (project_name) VALUES ($1) RETURNING *'
+const createProjects =  'INSERT INTO projects (project_name, rank) VALUES ($1, $2) RETURNING *'
 
 const allProjects = 'SELECT * FROM projects'
 const updateName = 'UPDATE projects SET project_name=$1 WHERE id=$2 RETURNING *'
@@ -14,8 +14,8 @@ const completedNo ='UPDATE projects SET completed = false WHERE id=$1'
 
 
 const Projects = {
-  create: (projectName) => {
-    return db.oneOrNone( createProjects, [projectName] )
+  create: (projectName, rank) => {
+    return db.oneOrNone( createProjects, [projectName, rank] )
   },
   getAll: () => {
     return db.any( allProjects )
