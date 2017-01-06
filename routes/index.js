@@ -67,14 +67,28 @@ router.post('/up/:id', (req, res) => {
       .then( whocares => res.redirect( '/' ))
 
 
-    // console.log('req.body', req.params.id)
-    // console.log("IT WORKS")
-    //
-    // Projects.up(req.params.id).then( () =>
-    //   res.redirect('/')
-    // )
-    // .catch(error => res.json(error))
 })
 
+// create a route for down ranking
+router.post('/down/:id', (req, res) => {
+    Projects.getOrderedIds()
+      .then( ids => {
+        const index = ids.findIndex( element =>
+          element.id === parseInt( req.params.id )
+        )
+
+        // swap with previous element
+        const temp = ids[ index + 1 ]
+        ids[ index + 1 ] = ids[ index ]
+        ids[ index ] = temp
+
+        // Then I want to reset rank of everything in the current order
+        return ids.map( (object, rank) => ({ id: object.id, rank }))
+      })
+      .then( Projects.updateRanks )
+      .then( whocares => res.redirect( '/' ))
+
+
+})
 
 module.exports = router;

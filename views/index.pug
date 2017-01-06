@@ -23,6 +23,7 @@ block content
             form(action=`/up/${house.id}` method='post')
                 input#up(name='up', type='button')
                 button UP
-          form(action=`/down/${house.id}` method='post')
-              //- input#down`(name='' type='' checked=house.)
-              button Down
+          if index !== houses.length-1
+            form(action=`/down/${house.id}` method='post')
+                //- input#down`(name='' type='' checked=house.)
+                button Down

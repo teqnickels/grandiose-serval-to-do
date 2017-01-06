@@ -40,8 +40,4 @@ const Projects = {
   getOrderedIds: () => db.any( orderedIdsQuery )
 }
 
-// Projects.getAll().then( blob => console.log('ALL THIS STUFF', blob) )
-
-
-console.log('hello')
 module.exports = Projects
