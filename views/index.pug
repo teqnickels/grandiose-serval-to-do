@@ -1,29 +1,42 @@
 extends layout
 block content
 
-  h1
-  p Welcome to
-  form(action='/create-project', method='post')
-    input#user_submission(name='project', placeholder='Enter Project Name')
-    button Submit
-  .project_lists
+  div.container
+    h1
+    p.logo SERVAL
+  div.headimg
+    img(src = "images/serval1.jpg")
+    div.box
+      h2 MANAGE YOUR LIFE LIKE A BOSS
 
-    ul
-      each house, index in houses
-        li= house.project_name
-          form(action='/delete/' + house.id, method='post')
-            button X
-          form(action='/updateName/' + house.id method='post')
-            input#updatedProject(name='editedName', placeholder=house.project_name)
-            button edit
-          form(action='/completed/' + house.id method='post')
-              input#completed(name='completed' type="checkbox" checked=house.completed)
-              button update
-          if index !== 0
-            form(action=`/up/${house.id}` method='post')
-                input#up(name='up', type='button')
-                button UP
-          if index !== houses.length-1
-            form(action=`/down/${house.id}` method='post')
-                //- input#down`(name='' type='' checked=house.)
-                button Down
+    div.newProject
+      form(action='/create-project', method='post')
+        input#user_submission(name='project', placeholder='Enter Project Name')
+        button Submit
+
+      div.project_lists
+      ul
+        each house, index in houses
+          div.flex-container
+            if index !== 0
+              form(action=`/up/${house.id}` method='post')
+                  button &#8593;
+
+            if index !== houses.length-1
+              form(action=`/down/${house.id}` method='post')
+                  button &#8595;
+
+            li= house.project_name
+            form(action='/delete/' + house.id, method='post')
+              button X
+
+            form(action='/updateName/' + house.id method='post')
+              input#updatedProject(name='editedName', placeholder=house.project_name)
+              button edit
+
+            form(action='/completed/' + house.id method='post')
+                input#completed(name='completed' type="checkbox" checked=house.completed)
+                button Update Project Status
+
+  footer
+    img(src = "images/serval2.jpg")

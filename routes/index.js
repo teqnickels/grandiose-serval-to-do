@@ -46,6 +46,7 @@ router.post('/completed/:id', (req, res) => {
   Projects.completedYes(req.params.id, isCompleted).then( () => {
     res.redirect('/')
   })
+  // .catch(error => res.json(error))
 })
 
 router.post('/up/:id', (req, res) => {
