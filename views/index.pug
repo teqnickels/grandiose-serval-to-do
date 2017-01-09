@@ -1,42 +1,65 @@
 extends layout
 block content
 
-  div.container
-    h1
-    p.logo SERVAL
-  div.headimg
-    img(src = "images/serval1.jpg")
-    div.box
-      h2 MANAGE YOUR LIFE LIKE A BOSS
+  header
+    h1 SERVAL
 
-    div.newProject
-      form(action='/create-project', method='post')
-        input#user_submission(name='project', placeholder='Enter Project Name')
-        button Submit
+      section.page
+        div.container
+          div.row
+            img.head(src = "images/serval1.jpg")
 
-      div.project_lists
-      ul
-        each house, index in houses
+        div.pageHero
+        h2.tag Always forward
+          div.newProject
+            form(action='/create-project', method='post')
+              input#user_submission(name='project', type='text' placeholder='Enter Task Name')
+              button Add Task
+
+  div.project_list
+    h1.catch Never backwards.
+    ul
+      each house, index in houses
+        div.grid
           div.flex-container
-            if index !== 0
-              form(action=`/up/${house.id}` method='post')
-                  button &#8593;
+            div.grid-cell.up
+                if index !== 0
+                  form(action=`/up/${house.id}` method='post')
+                      button &#8593;
+                if index == 0
+                  div.hide
 
-            if index !== houses.length-1
-              form(action=`/down/${house.id}` method='post')
-                  button &#8595;
 
-            li= house.project_name
-            form(action='/delete/' + house.id, method='post')
-              button X
 
-            form(action='/updateName/' + house.id method='post')
-              input#updatedProject(name='editedName', placeholder=house.project_name)
-              button edit
+          div.Grid--gutters
+          div.flex-container
+            div.grid-cell.down
+                if index !== houses.length-1
+                  form(action=`/down/${house.id}` method='post')
+                      button &#8595;
+                if index == houses.length-1
+                  div.hide
 
-            form(action='/completed/' + house.id method='post')
-                input#completed(name='completed' type="checkbox" checked=house.completed)
-                button Update Project Status
+          div.Grid--gutters
+            div.grid-cell.list
+              li= house.project_name
 
-  footer
-    img(src = "images/serval2.jpg")
+          div.Grid--gutters
+            div.grid-cell.editbox
+              form(action='/updateName/' + house.id method='post')
+                input#updatedProject(name='editedName', placeholder=house.project_name)
+
+
+          div.Grid--gutters
+            div.grid-cell.check
+              form(action='/completed/' + house.id method='post')
+                  input#completed(name='completed' type="checkbox" checked=house.completed)
+                  button.grid-cell.complete Save Task Status
+
+          div.Grid--gutters
+            div.grid-cell.update
+
+          div.Grid--gutters
+            div.grid-cell.delete
+              form(action='/delete/' + house.id, method='post')
+                button.delete X
