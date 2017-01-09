@@ -43,10 +43,10 @@ router.post('/completed/:id', (req, res) => {
 
   const isCompleted = req.body.completed === "on" ? true : false
 
-  Projects.completedYes(req.params.id, isCompleted).then( () => {
+  Projects.finishedTask(req.params.id, isCompleted).then( () => {
     res.redirect('/')
   })
-  // .catch(error => res.json(error))
+  .catch(error => next(error))
 })
 
 router.post('/up/:id', (req, res) => {

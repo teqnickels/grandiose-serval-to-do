@@ -1,58 +1,151 @@
 body {
-  padding: 50px;
-  padding-left:200px;
-  padding-right:200px;
+  padding-left:50px;
+  padding-right:50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h1, h2 {
+  color: #4C2E5B;
 
 }
 
-a {
-  color: #00B7FF;
+.head {
+  width: 100%;
 }
 
-.logo {
-  font-size: 30px;
-}
-
-.headimg {
-  width: 80%;
-  style: bold
-  border: 1px solid #DDDDDD;
-  position: relative;
-}
-
-.box {
+.pageHero {
+  z-index: 10;
+  margin-top: -400px;
   float: left;
-     position: absolute;
-     left: 0px;
-     top: 0px;
-     z-index: 1000;
-     background-color: #92AD40;
-     padding: 5px;
-     color: #FFFFFF;
-     font-weight: bold;
-  }
+  width: 80.33333%;
+  height: 250px;
+  margin-left: 8.33333%;
+  min-height: 100px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  background-color: #4C2E5B;
+  opacity: .5;
+}
+
+.tag {
+  z-index: 11;
+  margin-top: -360px;
+  float: left;
+  width: 83.33333%;
+  /*margin-left: 8.33333%;*/
+  min-height: 1px;
+  padding-left: 50%;
+  position: relative;
+  color: white;
+  font-size: 40pt;
 }
 
 h2 {
-padding:100px;
+  margin-right: 50%
+}
+
+input {
+  width: 250px;
+  height: 45px;
+  border: 1px solid #C1C1C1;
+  border-radius: 4px;
+  margin-right: 5px;
+  padding: 10 px 20px;
+  font-size: 14pt;
 
 }
+
+
+button {
+  background-color: #23162B;
+  color: white;
+  border: 1px solid #23162B;
+  padding: 16px 32px;
+  padding-bottom: 15px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  height: 50px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+
+.catch {
+  color: #474747;
+}
+
 ul {
   list-style: none;
+  font-size: 16pt;
+}
+
+li {
+  padding: 2px;
+}
+
+.grid {
+display: flex;
 }
 
 .flex-container {
-  display:flex;
-  flex-wrap:nowrap;
+  flex-direction: column;
+}
+.grid-cell {
+flex: 1;
+}
 
+.Grid--gutters {
+  margin: 1em 0 0 -1em;
+}
+
+.up {
+  margin-right: 20px;
+  margin-top: 20px;
+}
+.down {
+  margin-right: 20px;
+  margin-top: 20px;
+
+}
+.list {
+  margin-right: 40px;
+  padding-left: 20px;
+  width: 150px;
+}
+
+.editbox {
+    margin-right: 20px;
+}
+
+.edit {
+  margin-top: -5px;
+  margin-right: 20px;
 
 }
 
-form {
-  margin-bottom: 20px;
+.complete {
+  margin-left: -40px;
+  width: 190px;
 }
 
-footer > img {
-  opacity: 0.5;
+
+input#completed {
+  width: 20px;
+  margin-right: 50px;
+  height: 20px;
+}
+
+.delete {
+  margin-right: 20px;
+  margin-left: 40px;
+}
+
+.hide {
+  width: 85px;
+}
+
+.project_lists {
+  margin-left: 30%;
 }
