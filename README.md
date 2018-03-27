@@ -13,7 +13,7 @@ A learning project where I built a full stack to do list application. I built th
   - [x] Pug
  
  ## Notes
- _ I met most of the specs for the project, but didn't get to authentication. I was able to learn about authentication, Bcrypt, Sessions, and Cookies, later in another learning-based project: https://github.com/teqnickels/contacts-snapshot-starter
+ _I met most of the specs for the project, but didn't get to authentication. I was able to learn about authentication, Bcrypt, Sessions, and Cookies, later in another learning-based project: https://github.com/teqnickels/contacts-snapshot-starter _
  
 # Installation Instructions
 
