@@ -11,6 +11,7 @@ A learning project where I built a full stack to do list application. I built th
   - [ ] Sessions
   - [ ] Cookies
   - [x] Pug
+  - [ ] Heroku
  
  ## Notes
  *I met most of the specs for the project, but didn't get to authentication. I was able to learn about authentication, Bcrypt, Sessions, and Cookies, later in another learning-based project: https://github.com/teqnickels/contacts-snapshot-starter*
@@ -56,7 +57,22 @@ grandiose-serval-todo
         ├── login.pug
         └── signup.pug
  ```
- 
+
+# License Information
+
+MIT License
+
+
+# Known bugs
+    - This application does not require authentication at this time. 
+
+# Changelog
+    Coming Soon
+
+# News
+    Coming Soon
+
+# Original Specs for Assignment
 __Description__
 
 Complete a to do list app deployed to heroku.
