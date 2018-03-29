@@ -1,5 +1,7 @@
 # Grandiose-Serval
 A learning project where I built a full stack to do list application. I built this project while attending The Learner's Guild and it was an assignment that had a set of specs that I needed to try to reach. I've included the original specs in this document below. 
+![Image of homepage](https://github.com/teqnickels/contacts-snapshot-starter/blob/master/serval.png)
+
 
 ## Learning Project Goals
   - [x] Express
